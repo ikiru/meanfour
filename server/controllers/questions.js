@@ -4,7 +4,7 @@ let Question = mongoose.model("Question");
 module.exports = {
   // index to test with postman
   index: function(req, res) {
-    question.find({}, function(err, question) {
+    Question.find({}, function(err, question) {
       if (err) {
         return res.json(err);
       }
@@ -23,23 +23,22 @@ module.exports = {
   },
 
   show: function(req, res) {
-    User.findbyId(req.param.id, function(err, user) {
+    Question.findbyId(req.param.id, function(err, question) {
       if (err) {
         return res.json(err);
       }
-      return res.json(user);
+      return res.json(question);
     });
-  },
-
-update: function(req, res){
-  Question.findbyIdAndUpdate(req.params.id, function(err, question){
-    if (err) {
-      return res.json(err);
-    }
-    return res.json(question);
-  })
-}
-
+  }
+};
+// update: function(req, res){
+//   Question.findbyIdAndUpdate(req.params.id, function(err, question){
+//     if (err) {
+//       return res.json(err);
+//     }
+//     return res.json(question);
+//   })
+// };
 
 // ********************* sample code *****************************
 
@@ -51,7 +50,6 @@ update: function(req, res){
 //     model:'User'
 //   }
 // // })
-
 
 // delete: function(req, res){
 //   Question.findbyIdAndRemove(req.params.id, function(err, question){

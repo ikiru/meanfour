@@ -8,25 +8,19 @@ let UserSchema = new mongoose.Schema(
       required: [true, "Name cannot be blank"]
     },
 
-  {
     win: {
-      type: Number,
-
+      type: Number
     },
 
-    {
-      count: {
-        type: String,
-        required: [true, "Name cannot be blank"]
-      },
+    count: {
+      type: String,
+      required: [true, "Name cannot be blank"]
+    },
 
-    {
-      Percentage: {
-        type: Number,
-
-      },
-
-
+    Percentage: {
+      type: Number
+    }
+  },
   { timestamps: true }
 );
 
