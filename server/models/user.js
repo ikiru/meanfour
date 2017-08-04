@@ -8,12 +8,24 @@ let UserSchema = new mongoose.Schema(
       required: [true, "Name cannot be blank"]
     },
 
-    appointment: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: " Appointment"
-      }
-    ],
+  {
+    win: {
+      type: Number,
+
+    },
+
+    {
+      count: {
+        type: String,
+        required: [true, "Name cannot be blank"]
+      },
+
+    {
+      Percentage: {
+        type: Number,
+
+      },
+
 
   { timestamps: true }
 );

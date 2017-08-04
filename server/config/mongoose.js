@@ -3,7 +3,7 @@ let fs = require("fs");
 
 mongoose.Promise = global.Promise;
 //  change link to
-mongoose.connect("mongodb://localhost/exam3", { useMongoClient: true });
+mongoose.connect("mongodb://localhost/exam4", { useMongoClient: true });
 
 let models_path = __dirname + "/../models";
 
