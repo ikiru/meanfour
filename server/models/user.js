@@ -8,20 +8,13 @@ let UserSchema = new mongoose.Schema(
       required: [true, "Name cannot be blank"]
     },
 
-    question: [
+    appointment: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: " Question"
+        ref: " Appointment"
       }
     ],
 
-    answer: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: " Question"
-      }
-    ]
-  },
   { timestamps: true }
 );
 
