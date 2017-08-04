@@ -1,6 +1,6 @@
 let path = require("path");
 let Users = require("./../controllers/users");
-let Users = require("./../controllers/users");
+let Questions = require("./../controllers/questions");
 
 module.exports = function(app) {
   // User  routing
@@ -14,6 +14,7 @@ module.exports = function(app) {
 
   // question routing
   app.get("/question", Questions.index);
+  app.get("/question", Questions.show);
   app.post("/question", Questions.create);
   app.patch("/question/:id", Questions.update);
 
