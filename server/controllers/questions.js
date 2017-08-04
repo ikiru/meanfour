@@ -22,6 +22,14 @@ module.exports = {
     });
   },
 
+  show: function(req, res) {
+    User.findbyId(req.param.id, function(err, user) {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(user);
+    });
+  },
 
 update: function(req, res){
   Question.findbyIdAndUpdate(req.params.id, function(err, question){
