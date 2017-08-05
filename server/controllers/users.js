@@ -59,6 +59,15 @@ module.exports = {
       delete req.session.user_id;
     }
     return res.json({ status: true });
+  },
+
+  update: function(req, res) {
+    User.findbyIdAndUpdate(req.params.id, function(err, user) {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(user);
+    });
   }
 };
 

@@ -13,8 +13,7 @@ let UserSchema = new mongoose.Schema(
     },
 
     count: {
-      type: String,
-      required: [true, "Name cannot be blank"]
+      type: String
     }
   },
   { timestamps: true }

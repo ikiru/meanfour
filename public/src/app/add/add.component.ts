@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-
+import { QuestionService } from "../question.service";
 import { UserService } from "../user.service";
 
 import "rxjs";
@@ -11,9 +11,15 @@ import "rxjs";
 })
 export class AddComponent implements OnInit {
   currentUser = {};
+  newQuestion = {};
+
   errors: string[] = [];
 
-  constructor(private _userService: UserService, private router: Router) {}
+  constructor(
+    private _questionService: QuestionService,
+    private _userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
   // ****************************** all comp **************************
@@ -35,22 +41,22 @@ export class AddComponent implements OnInit {
 
   // ******************************************************************
 
-  //   create() {
-  //     this.errors = [];
-  //     return this._userService
-  //       .create(this.newUser)
-  //       .then(user => {
-  //         console.log(user);
-  //         if (user.errors) {
-  //           for (let key in user.errors) {
-  //             let error = user.error[key];
-  //             this.errors.push(error.message);
-  //           }
-  //         } else {
-  //           this._userService.setCurrentUser(user);
-  //           this.router.navigateByUrl("dashboard");
-  //         }
-  //       })
-  //       .catch(err => console.log(err));
-  //   }
+  create() {
+    this.errors = [];
+    return this._questionService
+      .createQuestions(this.newQuestion)
+      .then(user => {
+        // console.log(question);
+        if (user.errors) {
+          for (let key in user.errors) {
+            let error = user.error[key];
+            this.errors.push(error.message);
+          }
+        } else {
+          // this._questionService.setCurrentUser(user);
+          this.router.navigateByUrl("/");
+        }
+      })
+      .catch(err => console.log(err));
+  }
 }

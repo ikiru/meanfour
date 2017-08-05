@@ -8,6 +8,7 @@ module.exports = function(app) {
   app.post("/user", Users.create);
   app.get("/user/:id", Users.show);
   app.delete("/user/:id", Users.logout);
+  app.patch("/user/:id", Users.update);
 
   // Session routing
   app.get("/session", Users.session);
