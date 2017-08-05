@@ -8,13 +8,13 @@ export class QuestionService {
 
   createQuestions(question) {
     return this._http
-      .post("/questions", question)
+      .post("/question", question)
       .map(data => data.json())
       .toPromise();
   }
   getQuestions(question) {
     return this._http
-      .get("/questions", question)
+      .get("/question", question)
       .map(data => data.json())
       .toPromise();
   }

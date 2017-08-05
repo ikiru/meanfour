@@ -7,12 +7,12 @@ export class UserService {
   constructor(private _http: Http) {}
 
   create(user) {
-    return this._http.post("/users", user).map(data => data.json()).toPromise();
+    return this._http.post("/user", user).map(data => data.json()).toPromise();
   }
 
   login(user) {
     return this._http
-      .post("/sessions", user)
+      .post("/session", user)
       .map(data => data.json())
       .toPromise();
   }
