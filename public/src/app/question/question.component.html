@@ -6,7 +6,7 @@
 <p [ngStyle]="{'color':'red'}" *ngFor="let error of registrationErrors">{{ error }}</p>
 
 <div class="container">
-  <form (submit)="createUser()">
+  <form (submit)="createQuestions()">
   <tbody *ngFor="let question of questions">
 
           <tr>{{question.question}}</tr>
