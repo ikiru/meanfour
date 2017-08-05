@@ -47,11 +47,11 @@ export class AddComponent implements OnInit {
     this.errors = [];
     return this._questionService
       .createQuestions(this.newQuestion)
-      .then(user => {
-        // console.log(question);
-        if (user.errors) {
-          for (let key in user.errors) {
-            let error = user.error[key];
+      .then(question => {
+        // console.log(newQuestion);
+        if (question.errors) {
+          for (let key in question.errors) {
+            let error = question.error[key];
             this.errors.push(error.message);
           }
         } else {
