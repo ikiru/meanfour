@@ -10,23 +10,15 @@ export class UserService {
     return this._http.post("/user", user).map(data => data.json()).toPromise();
   }
 
-  login(user) {
-    return this._http
-      .post("/session", user)
-      .map(data => data.json())
-      .toPromise();
-  }
-
   logout() {
-    localStorage.removeItem("currentUser");
-    // return this._http.delete("/sessions").map(data => data.json()).toPromise();
+    sessionStorage.removeItem("currentUser");
   }
 
   setCurrentUser(user) {
-    localStorage.setItem("currentUser", JSON.stringify(user));
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem("currentUser"));
+    return JSON.parse(sessionStorage.getItem("currentUser"));
   }
 }

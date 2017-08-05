@@ -20,21 +20,21 @@ export class QuestionComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
-  getUsers() {
-    return this._userService
-      .getUser()
-      .then(data => {
-        console.log(data);
-        this.user = data;
-        for (let user of this.users) {
-          user.display = false;
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-  setCurrentUser() {
-    this.currentUser = this._userService.getCurrentUser();
-  }
+  // getUsers() {
+  //   return this._userService
+  //     .getUser()
+  //     .then(data => {
+  //       console.log(data);
+  //       this.user = data;
+  //       for (let user of this.users) {
+  //         user.display = false;
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
+  // setCurrentUser() {
+  //   this.currentUser = this._userService.getCurrentUser();
+  // }
 }
