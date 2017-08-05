@@ -1,3 +1,19 @@
-<p>
-  question works!
-</p>
+
+<div class="row">
+  <p>Hi{{user.name}}</p>
+</div>
+<p>Choose an answer for each of the questions and submit the test once done. Good Luck!</p>
+<p [ngStyle]="{'color':'red'}" *ngFor="let error of registrationErrors">{{ error }}</p>
+
+<div class="container">
+  <tbody>
+      <tr *ngFor="let question of questions">
+          <tr>{{question.question}}</tr>
+          <tr>{{question.correct}}  </tr>
+          <tr>{{question.fakeone}}  </tr>
+          <tr>{{question.faketwo}}  </tr>
+          <tr>{{question.fakethree}}  </tr>
+      </tr>
+  </tbody>
+
+</div>
