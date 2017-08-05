@@ -56,7 +56,7 @@ export class AddComponent implements OnInit {
           }
         } else {
           // this._questionService.setCurrentUser(user);
-          this.router.navigateByUrl("/");
+          this.router.navigateByUrl("dashboard");
         }
       })
       .catch(err => console.log(err));

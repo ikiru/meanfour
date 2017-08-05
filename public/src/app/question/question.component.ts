@@ -20,20 +20,20 @@ export class QuestionComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
-  // getUsers() {
-  //   return this._userService
-  //     .getUser()
-  //     .then(data => {
-  //       console.log(data);
-  //       this.user = data;
-  //       for (let user of this.users) {
-  //         user.display = false;
-  //       }
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
+  getQuestions() {
+    return this._questionService
+      .getQuestions()
+      .then(data => {
+        console.log(data);
+        this.question = data;
+        for (let questions of this.question) {
+          question.display = false;
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   // setCurrentUser() {
   //   this.currentUser = this._userService.getCurrentUser();
   // }
