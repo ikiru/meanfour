@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user.service";
+import { QuestionService } from "../question.service";
 import { Router } from "@angular/router";
 
 @Component({

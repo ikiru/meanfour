@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   // ****************************** all comp **************************
 
   getCurrentUser() {
-    this.currentUser = this._userService.getCurrentUser;
+    this.currentUser = this._userService.getCurrentUser();
   }
 
   isLoggedIn() {
