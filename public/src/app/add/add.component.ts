@@ -11,17 +11,19 @@ import "rxjs";
 })
 export class AddComponent implements OnInit {
   currentUser = {};
-  newQuestion = {};
 
   errors: string[] = [];
-
+  newQuestion = {};
   constructor(
     private _questionService: QuestionService,
     private _userService: UserService,
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCurrentUser();
+    this.isLoggedIn();
+  }
   // ****************************** all comp **************************
 
   getCurrentUser() {
@@ -41,7 +43,7 @@ export class AddComponent implements OnInit {
 
   // ******************************************************************
 
-  create() {
+  createQuestion() {
     this.errors = [];
     return this._questionService
       .createQuestions(this.newQuestion)
