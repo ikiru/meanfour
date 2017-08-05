@@ -15,10 +15,6 @@ let UserSchema = new mongoose.Schema(
     count: {
       type: String,
       required: [true, "Name cannot be blank"]
-    },
-
-    Percentage: {
-      type: Number
     }
   },
   { timestamps: true }

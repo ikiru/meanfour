@@ -1,6 +1,14 @@
-<div class="">
-  <h1>Welcome {{user.name}}</h1>
+<div class="row">
+  <p>Hi{{user.name}}</p>
+</div>
+<div class="row">
+  <a href [routerLink] ="['/dashboard']">Home</a>
+<a href [routerLink] ="['/add']">Add a question</a>
+<a href (click) = 'logout() '>Logout</a>
 </div>
 
-<a href [routerLink] ="['/dashboard']"></a>
-<a href (click) = 'logout() '>Logout</a>
+
+
+<div class="row">
+<button  [routerLink]="['/question']">play</button>
+</div>
