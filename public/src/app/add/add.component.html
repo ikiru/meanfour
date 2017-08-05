@@ -1,3 +1,38 @@
-<p>
-  add works!
-</p>
+<div class="row">
+  <a href [routerLink] ="['/dashboard']">Home</a>
+<a href [routerLink] ="['/add']">Add a question</a>
+<a href (click) = 'logout() '>Logout</a>
+</div>
+
+<h1>New Question</h1>
+
+<form (submit)="createQuestion(newQuestion)">
+  <div>
+    <label>Question</label>
+    <input type="textarea" name="question" [(ngModel)]="newQuestion.question">
+  </div>
+  <div>
+    <label>Correct Answer</label>
+    <input type="textarea" name="question" [(ngModel)]="newQuestion.correct">
+  </div>
+  <div>
+    <label>Fake Answer</label>
+    <input type="textarea" name="question" [(ngModel)]="newQuestion.fakeone">
+  </div>
+
+  <div>
+    <label>Fake Answer</label>
+    <input type="textarea" name="question" [(ngModel)]="newQuestion.faketwo">
+  </div>
+
+  <div>
+    <label>Fake Answer</label>
+    <input type="textarea" name="question" [(ngModel)]="newQuestion.fakethree">
+  </div>
+
+  <div class="row">
+  <button  [routerLink]="['/']">Cancel</button>
+  <button type="submit" class="btn btn-default"[disabled]="!newquestion.name">Submit</button>
+  </div>
+
+</form>

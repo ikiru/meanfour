@@ -11,4 +11,22 @@
 
 <div class="row">
 <button  [routerLink]="['/question']">play</button>
+<p>Click the button to start the trivia game</p>
+</div>
+<div class="container">
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Percentage</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let hero of heroes">
+              <td>{{user.name}}</td>
+              <td>{{user.win}} / {{user.count}}</td>
+              <td>{{user.win / user.count}}</td>
+          </tr>
+      </tbody>
+  </table>
+
 </div>

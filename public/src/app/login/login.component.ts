@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  createUser(newUser) {
-    console.log(newUser);
+  create() {
     this.errors = [];
     return this._userService
       .create(this.newUser)
